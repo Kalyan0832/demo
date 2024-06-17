@@ -23,7 +23,7 @@ public class WebDriverUtility {
 	//implicitly wait
 	
 	public void waitPageToLoad(WebDriver driver) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
 	//explicit wait
 	public void waitForelementToPresent(WebDriver driver ,WebElement element) {

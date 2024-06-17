@@ -10,6 +10,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 
 import com.vTiger.crm.ObjectRepositoryUtility.HomePage;
 import com.vTiger.crm.ObjectRepositoryUtility.LoginPage;
@@ -18,7 +20,7 @@ import com.vTiger.crm.generic.fileUtility.FileUtility;
 import com.vTiger.crm.generic.javaUtility.JavaUtility;
 import com.vTiger.crm.generic.webDriverUtility.UtilityClassObject;
 import com.vTiger.crm.generic.webDriverUtility.WebDriverUtility;
-
+@Listeners(com.vTiger.crm.ListenerUtility.ListenerImple.class)
 public class BaseClass {
 	
 	public WebDriver driver;
@@ -34,12 +36,12 @@ public class BaseClass {
 	}
 
 
-//	@Parameters("browser")
+
 //	when we are performing cross browser testing parameter are
 //	passed from xml file to read that data we have to use 
 //	@Parameters annotation and method should be parameterised
 //	
-
+//	@Parameters("browser")
 	@BeforeClass(groups = { "smokeTest", "regressionTest" })
 	public void launchBrowser() throws Throwable {
 		String browser = fLib.getDataFromPropertiesFile("browser");
